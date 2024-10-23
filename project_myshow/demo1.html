@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Home</title>
+    <style>
+       #div{
+        margin:50px 90px 0px 0px; 
+       
+        
+        }
+        h4{
+          font-size:large;
+          font-weight:bolder;
+        }
+        body{
+          background-color: antiquewhite;
+          background-image: url('https://i.ibb.co/ftqBp5P/a2.jpg');
+          background-repeat: no-repeat;
+          background-size:cover ;
+          background-attachment: fixed;
+        }
+        .header{
+          position: fixed;
+        }
+        .card{
+          background-color: rgba(200, 70, 70, 0.651);
+          border:3px ridge rgb(248, 5, 5);
+        }
+
+       
+        
+      
+    </style>
+    <style>
+      .btn {
+        background-color: #af614c;
+        color: white;
+        padding: 15px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+      }
+  
+      .btn:hover {
+        background-color: #d10a0a;
+      }
+  
+      /* Popup Styles */
+      .popup {
+        display: none; 
+        position: fixed; 
+        z-index: 1; 
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5); 
+      }
+  
+      .popup-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border-radius: 10px;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
+  
+      .close-btn {
+        color: red;
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+      }
+  
+      .close-btn:hover {
+        color: darkred;
+      }
+    </style>
+  </head>
+  <body style="background-image:https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css";>
+    <div id="header" class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">mySHOW</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">movie</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    language
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Telugu</a>
+                    <a class="dropdown-item" href="#">Kannada</a>
+                    <a class="dropdown-item" href="#">Hindi</a>
+                    <a class="dropdown-item" href="#">English</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Bookings</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+    </div>
+    <div class="container" >   
+      <div class="row"  id="card-container">
+        <!-- <div id='div' class="col-md-4" >
+          <div class="card"  style="width: 18rem;" id="card-container"> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+    <!-- Popup Modal -->
+    <div id="bookingPopup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2>CLICK TO CONFIRM</h2>
+        <h1 id="titlename"></h1>
+        
+        <p id="desc"></p>
+        <input type="button" value='CONFIRM' class="btn btn-outline-success">
+      </div>
+    </div>
+  
+   
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    -->
+    <script>
+        // Example data
+const cardsData = [
+    { title: "Agnathavasi", imageUrl: "https://i.ibb.co/DQCVg70/AV.jpg" , description: "This is card 1." },
+     { title: "bhagath", imageUrl: "https://i.ibb.co/drtFHXx/BAGAT.jpg", description: "This is card 2." },
+     { title: "HHVM", imageUrl: "https://i.ibb.co/VJz31GY/HHVM.jpg", description: "This is card 3." },
+     { title: "Gabbarsingh", imageUrl: "https://th.bing.com/th/id/OIP._Jc44fGwhzeoikLNoxukYAHaE3?rs=1&pid=ImgDetMain" , description: "This is card 1." },
+     { title: "gudumba", imageUrl: "https://th.bing.com/th/id/R.9fe36d087ac8b28438a9b0a69f85d26d?rik=aSRXQdICF5X9LA&riu=http%3a%2f%2fwww.idlebrain.com%2fimages1%2fwp-6gudumbashankar1024.jpg&ehk=Rbr%2fDDTM4bXNuMJK1mfmIN3BSHUE5hjWVXJOOU19L40%3d&risl=&pid=ImgRaw&r=0", description: "This is card 2." },
+     { title: "khushi", imageUrl: "https://wallpapercave.com/wp/wp7793011.jpg", description: "This is card 3." },
+     { title: "Tholiprema", imageUrl: "https://1.bp.blogspot.com/-j56smsagqoU/YCpeVL_4H7I/AAAAAAAAEwA/ZFSRPyrbsJstdSfKiX3QbK6D3qhFF_DqQCLcBGAsYHQ/w1200-h630-p-k-no-nu/HDgallery%2BKushi%2BPawankalyan.jpeg" , description: "This is card 1." },
+     { title: "Attarintiki daredi", imageUrl: "https://moviegalleri.net/wp-content/gallery/attarintiki-daredi-latest-stills/attarintiki_daredi_latest_stills_pawan_kalyan_samantha_6f8e9c4.jpg", description: "This is card 2." },
+     { title: "suswagatham", imageUrl: "https://etv-win-image.akamaized.net/etvwin/telugumovies/suswagatham/46688/suswagatham-Suswagatham_Movie-768x432.jpg", description: "This is card 3." }
+
+]; //${card.title},${card.imageUrl},${card.description}
+
+// Function to create a card element
+function createCard(card) {
+ 
+    return `
+        <div id='div' class="col-md-3" >
+          <div class="card"  style="width: 18rem;" id="card-container">
+                    <img src="${card.imageUrl}" class="card-img-top" alt="..." height="200" width=100px>
+                    <div class="card-body">
+                      <h4 class="card-title">${card.title}</h4>
+                      <p class="card-text">${card.description}</p>
+                      <button type="submit" class="btn btn-danger" onclick="openPopup('${card.title}',${card.description}')">BOOK</a>
+                       
+                    </div> 
+          </div>
+        </div>
+    `;
+}
+
+// Get the container element
+const cardContainer = document.getElementById('card-container');
+
+// Create and insert cards
+cardContainer.innerHTML = cardsData.map(createCard).join('');
+
+    </script>
+      <script>
+        // Open popup
+        let a;
+        let b;
+        let c;
+
+        function openPopup(a,c) {
+          document.getElementById("bookingPopup").style.display = "block";
+          // document.getElementById("titlename").innerHTML="<h1>"+a+"</h1>";
+          document.getElementById('titlename').innerText=a;
+        // Set title 
+        
+   // Set description
+    document.getElementById("desc").innerText = c;
+   
+        }
+   
+        // Close popup
+        function closePopup() {
+          document.getElementById("bookingPopup").style.display = "none";
+        }
+      </script>
+ 
+  </body>
+</html>

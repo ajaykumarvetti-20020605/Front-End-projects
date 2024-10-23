@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Registration</title>
+    <style>
+      #logo {
+        display: flex;
+        justify-content: center; /* Horizontally centers the image */
+        align-items: center;    /* Vertically centers the image */
+      }
+      .error-message {
+        color: red;
+        margin-top: 10px;
+      }
+      h2{
+        color:green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo">
+      <img src="https://i.ibb.co/t3vKMqx/Screenshot-2024-09-16-131559.png" alt="Logo">
+    </div>
+    <div class="container">
+      <h1>Registration mySHOW</h1>
+      <form action='register.php' method='post' id="registrationForm">
+        <div class="form-group">
+          <label for="username">UserName</label>
+          <input type="text" class="form-control" id="username" name="username" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone NO</label>
+          <input type="text" class="form-control" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input type="email" class="form-control" id="email" name="emailid"/>
+        </div>
+        <div class="form-group">
+          <label for="passwd">Password</label>
+          <input type="password" class="form-control" id="passwd" name="passwd" />
+        </div>
+        <div class="form-group">
+          <label for="confirmpasswd">Confirm Password</label>
+          <input type="password" class="form-control" id="confirmpasswd" />
+        </div>
+        <div class="form-group">
+          <input type="button" class="btn btn-primary" value="Submit" onclick="saveDetails()" />
+          <input type="reset" class="btn btn-secondary" value="Reset" />
+        </div>
+        <div id="errorMessage" class="error-message"></div>
+      </form>
+    </div>
+
+    <script>
+      function saveDetails() {
+        let username = document.getElementById('username').value;
+        let phoneno = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('passwd').value;
+        let confirmPassword = document.getElementById('confirmpasswd').value;
+
+        let error = [];
+        const phonePattern = /^[0-9]{10}$/; // Example pattern for phone number
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Example pattern for email
+
+        if (username.length < 3) {
+          error.push("Username must be at least 3 characters");
+        }
+        if (!phonePattern.test(phoneno)) {
+          error.push("Please enter a valid phone number");
+        }
+        if (!emailPattern.test(email)) {
+          error.push("Enter a valid email ID");
+        }
+        if (password.length < 6) {
+          error.push("Password must be at least 6 characters");
+        }
+        if (confirmPassword !== password) {
+          error.push("Passwords do not match");
+        }
+
+        if (error.length > 0) {
+          document.getElementById('errorMessage').innerHTML = error.join('<br>');
+        } else {
+          document.getElementById('errorMessage').innerHTML = "<h2>success<br><input type='button' value='login'id='jumptoLogin'  onclick=\"window.location.href='login.html'\" class='btn btn-primary'/></h2>";
+          // Proceed with form submission or other logic
+          document.getElementById('registrationForm').submit();
+        }
+      }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>
